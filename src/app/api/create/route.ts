@@ -34,7 +34,13 @@ interface Bill {
   devMode: boolean;
   methods: string[];
   products: Product[];
+  customer: Customer;
+  metadata: Metadata;
+  nextBilling: string | null;
+  createdAt: string;
+  updatedAt: string;
 }
+
 
 export async function POST(req: Request){
   const {
