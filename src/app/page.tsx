@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Moon, Stars, Heart, Gift, Calendar, Sparkles, Music, Share2, Clock } from "lucide-react";
+import { Moon, Stars, Heart, Gift, Calendar, Sparkles, Clock } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {

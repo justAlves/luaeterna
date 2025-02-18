@@ -48,7 +48,7 @@ export default function Page() {
             {/* Message */}
             <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-sm border border-purple-100">
               <p className="text-gray-700 italic">
-                "Nosso amor é como a lua: eterno, brilhante e sempre presente, mesmo quando não podemos ver."
+                &quot;Nosso amor é como a lua: eterno, brilhante e sempre presente, mesmo quando não podemos ver.&quot;
               </p>
             </div>
 

@@ -3,6 +3,7 @@
 import React from 'react'
 import { Button } from './ui/button'
 import { UploadIcon } from 'lucide-react'
+import Image from 'next/image'
 
 export default function UploadButton() {
     const inputRef = React.useRef<HTMLInputElement>(null)
@@ -45,9 +46,11 @@ export default function UploadButton() {
           <p className="text-sm text-app_secondary mt-4">
             Imagem enviada: {image.name}
           </p>
-          <img
+          <Image
             src={URL.createObjectURL(image)}
             alt="Imagem enviada"
+            width={100}
+            height={100}
             className="mt-4 w-24"
           />
         </div>
