@@ -1,4 +1,4 @@
-import { abacatePay, prisma, redis, supabase } from "@/services/clients";
+import { abacatePay, redis, supabase } from "@/services/clients";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request){

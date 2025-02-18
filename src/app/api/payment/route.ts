@@ -41,7 +41,7 @@ export async function POST(req: Request){
   const payment = await abacatePay.post("/billing/create", paymentData);
 
   
-  const saveRedis = await redis.set(slug, JSON.stringify({
+  await redis.set(slug, JSON.stringify({
     firstName,
     lastName,
     email,

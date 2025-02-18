@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/services/clients";
-import { Download, Heart, Share2, Calendar, Clock } from "lucide-react";
+import { Download, Heart, Share2, Calendar } from "lucide-react";
 import Image from "next/image";
 
 export async function getPage(slug: string){
