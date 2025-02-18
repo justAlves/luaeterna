@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="text-app_secondary relative overflow-hidden bg-gradient-to-b from-indigo-50 via-purple-50 to-pink-50">
+    <div className="text-app_secondary relative overflow-hidden bg-gradient-to-b from-indigo-50 via-purple-50 to-pink-50 pt-56 md:pt-16">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-96 h-96 bg-purple-100 rounded-full blur-[100px] opacity-30"></div>
