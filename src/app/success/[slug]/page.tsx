@@ -4,19 +4,15 @@ import axios from 'axios';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
-export default async function SuccessPage({
-  params
-}: {
-  params: { slug: string }
-}) {
+export default async function SuccessPage({ params }: { params: Promise<{ slug: string }> }) {
   try {
-    const paymentData = await redis.get(`${params.slug}`);
+    const paymentData = await redis.get(`${(await params).slug}`);
 
     if (!paymentData) {
       redirect('/404');
     }
     
-    const response = await axios.post(`http://localhost:3000/api/create`, {...paymentData, slug: params.slug});
+    const response = await axios.post(`http://localhost:3000/api/create`, {...paymentData, slug: (await params).slug});
 
     if (!response.data) {
       throw new Error('Falha ao criar a página');

@@ -1,22 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { supabase } from "@/services/clients";
+import { getPage } from "@/services/getPage";
 import { Download, Heart, Share2, Calendar } from "lucide-react";
 import Image from "next/image";
 
-export async function getPage(slug: string){
-  const { data, error } = await supabase.from("Page").select("*").eq("slug", slug).single();
-
-  if(error){
-    return null;
-  }
-
-  console.log(data);
-
-  return data;
-}
-
-export default async function Page({ params }: { params: { id: string } }) {
-  const page = await getPage(params.id);
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+  const page = await getPage((await params).id);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-purple-50 to-pink-50 pt-32 pb-16 px-4 md:px-16">
