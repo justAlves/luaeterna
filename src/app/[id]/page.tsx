@@ -1,7 +1,23 @@
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/services/clients";
 import { Download, Heart, Share2, Calendar, Clock } from "lucide-react";
+import Image from "next/image";
 
-export default function Page() {
+export async function getPage(slug: string){
+  const { data, error } = await supabase.from("Page").select("*").eq("slug", slug).single();
+
+  if(error){
+    return null;
+  }
+
+  console.log(data);
+
+  return data;
+}
+
+export default async function Page({ params }: { params: { id: string } }) {
+  const page = await getPage(params.id);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-purple-50 to-pink-50 pt-32 pb-16 px-4 md:px-16">
       {/* Background Elements */}
@@ -14,16 +30,12 @@ export default function Page() {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 inline-block text-transparent bg-clip-text">
-            João & Maria
+            {page?.firstName} & {page?.lastName}
           </h1>
           <div className="flex items-center justify-center gap-4 text-gray-600">
             <span className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
-              15 de Março, 2024
-            </span>
-            <span className="flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              19:30
+              Desde {new Date(page?.date).toLocaleDateString()}
             </span>
           </div>
         </div>
@@ -32,23 +44,36 @@ export default function Page() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Moon */}
           <div className="flex flex-col items-center space-y-6">
+            <p className="text-lg font-bold">Nossa lua 🌙:</p>
             {/* Moon Placeholder */}
-            <div className="w-80 h-80 rounded-full bg-gray-300 shadow-lg"></div>
-            <div className="text-center">
-              <h2 className="text-2xl font-semibold mb-2">Fase da Lua</h2>
-              <p className="text-gray-600">Lua Crescente</p>
+            <div className="w-80 h-80 rounded-full bg-gray-300 shadow-lg overflow-hidden">
+              <Image
+                src={page?.moonImage}
+                alt="Moon Image"
+                height={450}
+                width={450}
+                className="rounded-full scale-150 mt-5"
+              />
             </div>
           </div>
 
           {/* Right Column - Couple Photo and Message */}
           <div className="space-y-8">
             {/* Couple Photo Placeholder */}
-            <div className="w-full aspect-square bg-blue-200 rounded-2xl shadow-lg"></div>
+            <div className="w-full aspect-square bg-blue-200 rounded-2xl shadow-lg">
+              <Image
+                src={page?.coupleImage}
+                alt="Couple Image"
+                height={450}
+                width={450}
+                className="rounded-2xl h-full w-full object-cover"
+              />
+            </div>
             
             {/* Message */}
             <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-sm border border-purple-100">
               <p className="text-gray-700 italic">
-                &quot;Nosso amor é como a lua: eterno, brilhante e sempre presente, mesmo quando não podemos ver.&quot;
+                &quot;{page?.message}&quot;
               </p>
             </div>
 

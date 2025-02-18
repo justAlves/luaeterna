@@ -6,6 +6,22 @@ const nextConfig: NextConfig = {
     serverActions: {
       bodySizeLimit: "50mb",
     }
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "widgets.astronomyapi.com",
+        port: '',
+        pathname: "/moon-phase/generated/*",
+      },
+      {
+        protocol: "https",
+        hostname: "tieafcjteebgebgmknsi.supabase.co",
+        port: '',
+        pathname: "/storage/v1/object/public/uploads//*",
+      }
+    ]
   }
 };
 

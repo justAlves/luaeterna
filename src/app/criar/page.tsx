@@ -1,3 +1,5 @@
+'use client'
+
 import { createPayment } from "@/actions/send_page";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,6 +8,15 @@ import UploadButton from "@/components/upload_button";
 import { Calendar, Heart, Mail, MessageCircle, Moon, Upload, User, Users } from "lucide-react";
 
 export default function Page() {
+
+  const createPaymentAndRedirect = async (formData: FormData) => {
+    const url = await createPayment(formData);
+
+    window.location.href = url;
+
+    return
+  }
+  
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-purple-50 to-pink-50 pt-32 pb-16 px-4 md:px-16">
       {/* Background Elements */}
@@ -27,9 +38,10 @@ export default function Page() {
             Preencha o formulário abaixo para criar uma página personalizada que mostra a fase da lua em uma data especial, como uma forma única e romântica de presentear.
           </p>
         </div>
-
         <form 
-          action={createPayment}
+          action={async (formData: FormData) => {
+            await createPaymentAndRedirect(formData);
+          }}
           className="space-y-8 bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-purple-100"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -102,12 +114,43 @@ export default function Page() {
             />
           </div>
 
+          <div className="space-y-2">
+            <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+              <User className="w-4 h-4 text-purple-600" />
+              CPF
+            </label>
+            <Input
+              type="text"
+              placeholder="Digite seu CPF (apenas números)"
+              className="w-full border-purple-100 focus:border-purple-300 focus:ring-purple-200"
+              name="cpf"
+              maxLength={11}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+              <User className="w-4 h-4 text-pink-600" />
+              Telefone
+            </label>
+            <Input
+              type="tel"
+              placeholder="Digite seu telefone com DDD"
+              className="w-full border-purple-100 focus:border-purple-300 focus:ring-purple-200"
+              name="phone"
+            />
+          </div>
+
+          <p className="text-sm text-gray-500 italic">
+            * Precisamos do seu CPF e telefone para processar o pagamento de forma segura e garantir a entrega da sua Lua Eterna.
+          </p>
+
           <div className="flex justify-end pt-4">
             <Button
               type="submit"
               className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-6 text-lg hover:opacity-90 transition-opacity"
             >
-              Criar Lua Eterna
+              Criar Lua Eterna R$35,00
               <Heart className="ml-2 h-5 w-5" />
             </Button>
           </div>
