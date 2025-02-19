@@ -49,7 +49,7 @@ export async function createPayment(formData: FormData): Promise<string> {
   const imageUrl = `https://tieafcjteebgebgmknsi.supabase.co/storage/v1/object/public/${pathSplited[0]}//${pathSplited[1]}`;
   const slug = slugify(`${firstName}-${lastName}-${date}`, { lower: true });
 
-  const response = await axios.post("https://luaeterna.com.br/api/payment", {
+  const response = await axios.post("https://www.luaeterna.com.br/api/payment", {
     firstName,
     lastName,
     email,

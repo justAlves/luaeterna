@@ -24,11 +24,11 @@ export const metadata: Metadata = {
   keywords: "lua, presente romântico, fase da lua, data especial, lembrança, amor, namoro, casamento, aniversário de namoro",
   authors: [{ name: "LuaEterna" }],
   creator: "LuaEterna",
-  metadataBase: new URL('https://luaeterna.com.br'),
+  metadataBase: new URL('https://www.luaeterna.com.br'),
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://luaeterna.com.br',
+    url: 'https://www.luaeterna.com.br',
     title: 'LuaEterna | Eternize Momentos Especiais com a Lua',
     description: 'Crie páginas personalizadas que mostram a fase da lua em datas especiais. Uma forma única e romântica de presentear.',
     siteName: 'LuaEterna',

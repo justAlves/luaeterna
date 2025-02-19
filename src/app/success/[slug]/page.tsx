@@ -12,7 +12,7 @@ export default async function SuccessPage({ params }: { params: Promise<{ slug: 
       redirect('/404');
     }
     
-    const response = await axios.post(`https://luaeterna.com.br/api/create`, {...paymentData, slug: (await params).slug});
+    const response = await axios.post(`https://www.luaeterna.com.br/api/create`, {...paymentData, slug: (await params).slug});
 
     if (!response.data) {
       throw new Error('Falha ao criar a página');

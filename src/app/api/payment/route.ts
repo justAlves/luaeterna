@@ -29,8 +29,8 @@ export async function POST(req: Request){
         price: 3500
       }
     ],
-    returnUrl: "https://luaeterna.com.br/criar",
-    completionUrl: `https://luaeterna.com.br/success/${slug}`,
+    returnUrl: "https://www.luaeterna.com.br/criar",
+    completionUrl: `https://www.luaeterna.com.br/success/${slug}`,
     customer: {
       name: firstName,
       email,

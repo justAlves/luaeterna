@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://luaeterna.com.br/sitemap.xml',
+    sitemap: 'https://www.luaeterna.com.br/sitemap.xml',
   }
 } 
