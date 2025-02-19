@@ -1,6 +1,6 @@
 import { abacatePay, redis, supabase } from "@/services/clients";
-import FormData from "form-data";
-import Mailgun from "mailgun.js";
+//import FormData from "form-data";
+//import Mailgun from "mailgun.js";
 import { NextResponse } from "next/server";
 import QRCode from "qrcode";
 import Brevo from "@playt/brevo";
