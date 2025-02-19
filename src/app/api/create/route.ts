@@ -1,4 +1,6 @@
-import { abacatePay, mailgun, redis, supabase } from "@/services/clients";
+import { abacatePay, redis, supabase } from "@/services/clients";
+import FormData from "form-data";
+import Mailgun from "mailgun.js";
 import { NextResponse } from "next/server";
 import QRCode from "qrcode";
 
@@ -91,6 +93,13 @@ export async function POST(req: Request){
   redis.del(slug);
 
   const qrcodeBuffer = await QRCode.toBuffer(`https://luaeterna.com.br/${slug}`, { type: 'png' });
+
+  const mailGunKey = process.env.MAILGUN_API_KEY!;
+
+  const mailgun = new Mailgun(FormData).client({
+    username: "api",
+    key: mailGunKey,
+  })
 
   await mailgun.messages.create('luaeterna.com.br', {
     from: 'Lua Eterna - não responda <contato@luaeterna.com.br>',
