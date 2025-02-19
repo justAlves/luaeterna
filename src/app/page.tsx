@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Moon, Stars, Heart, Gift, Calendar, Sparkles, Clock } from "lucide-react";
 import Link from "next/link";
+import Mockup from "@/assets/images/mockup.svg";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -35,8 +37,15 @@ export default function Home() {
             </Button>
           </Link>
         </div>
-        <div className="w-full max-w-[500px] h-[500px] bg-white/30 backdrop-blur-sm rounded-2xl shadow-lg relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-100/50 to-pink-100/50"></div>
+        <div className="w-full max-w-[500px] h-[500px] relative overflow-hidden">
+          <div className="absolute inset-0  ">
+            <Image
+              src={Mockup}
+              alt="Mockup"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
         </div>
       </section>
 

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import Logo from '@/assets/images/logo.png'
+import Logo from '@/assets/images/logo.svg'
 import { Button } from './ui/button'
 import { Heart } from 'lucide-react'
 import Link from 'next/link'

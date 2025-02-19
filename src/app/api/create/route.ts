@@ -99,7 +99,7 @@ export async function POST(req: Request){
     html: `
       <div style="background-color: #f9f9f9; padding: 20px; font-family: Arial, sans-serif;">
         <div style="max-width: 600px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-          <img src="https://luaeterna.com.br/logo.png" alt="Lua Eterna" style="display: block; margin: 0 auto; width: 150px; margin-bottom: 20px;">
+          <img src="https://luaeterna.com.br/logo.svg" alt="Lua Eterna" style="display: block; margin: 0 auto; width: 150px; margin-bottom: 20px;">
           
           <h1 style="color: #2d3748; text-align: center; margin-bottom: 30px;">Sua Lua Eterna foi criada! 🌙</h1>
           
