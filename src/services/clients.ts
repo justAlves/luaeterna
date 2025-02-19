@@ -8,8 +8,8 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 export const supabase = createClient(supabaseUrl, supabaseKey);
 
 export const redis = new Redis({
-  url: process.env.REDIS_URL!,
-  token: process.env.REDIS_SECRET!,
+  url: process.env.NEXT_PUBLIC_REDIS_URL!,
+  token: process.env.NEXT_PUBLIC_REDIS_SECRET!,
 })
 
 const authstring = btoa(`${process.env.NEXT_PUBLIC_ASTRONOMY_CLIENT!}:${process.env.NEXT_PUBLIC_ASTRONOMY_SECRET!}`)
