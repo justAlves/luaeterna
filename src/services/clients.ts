@@ -32,5 +32,5 @@ export const astronomy = axios.create({
 
 export const mailgun = new Mailgun(FormData).client({
   username: "api",
-  key: "f1d79e5c8a6516746ffaa329ce348c5d-ac3d5f74-0c00c552"
+  key: process.env.MAILGUN_API_KEY!,
 })
