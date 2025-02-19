@@ -19,8 +19,10 @@ export default function UploadButton() {
         multiple={false}
         accept='image/*'
         onChange={(e) => {
+          console.log(e.target)
           const file = e.target.files?.[0]
           if (file) {
+            console.log(file)
             setImage(file)
           }
         }}

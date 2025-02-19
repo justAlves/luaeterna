@@ -54,6 +54,7 @@ export default function Page() {
                 placeholder="Digite seu nome"
                 className="w-full border-purple-100 focus:border-purple-300 focus:ring-purple-200"
                 name="firstName"
+                required
               />
             </div>
             <div className="space-y-2">
@@ -65,6 +66,7 @@ export default function Page() {
                 placeholder="Digite o nome do seu amor"
                 className="w-full border-purple-100 focus:border-purple-300 focus:ring-purple-200"
                 name="lastName"
+                required
               />
             </div>
           </div>
@@ -78,6 +80,7 @@ export default function Page() {
               type="date"
               className="w-full border-purple-100 focus:border-purple-300 focus:ring-purple-200"
               name="date"
+              required
             />
           </div>
 
@@ -90,6 +93,7 @@ export default function Page() {
               placeholder="Escreva uma mensagem romântica para seu amor... (obs: não inclua emojis)"
               className="w-full min-h-[150px] border-purple-100 focus:border-purple-300 focus:ring-purple-200"
               name="message"
+              required
             />
           </div>
 
@@ -111,6 +115,7 @@ export default function Page() {
               placeholder="Digite seu melhor email"
               className="w-full border-purple-100 focus:border-purple-300 focus:ring-purple-200"
               name="email"
+              required
             />
           </div>
 
@@ -125,6 +130,7 @@ export default function Page() {
               className="w-full border-purple-100 focus:border-purple-300 focus:ring-purple-200"
               name="cpf"
               maxLength={11}
+              required
             />
           </div>
 
@@ -138,6 +144,7 @@ export default function Page() {
               placeholder="Digite seu telefone com DDD"
               className="w-full border-purple-100 focus:border-purple-300 focus:ring-purple-200"
               name="phone"
+              required
             />
           </div>
 

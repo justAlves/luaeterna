@@ -45,10 +45,11 @@ export async function createPayment(formData: FormData): Promise<string> {
 
   const moonPhase = await astronomy.post("/moon-phase", data);
   const supabaseImage = await uploadFile(image);
-  const imageUrl = `https://tieafcjteebgebgmknsi.supabase.co/storage/v1/object/public/uploads/${supabaseImage.fullPath}`;
+  const pathSplited = supabaseImage.fullPath.split("/");
+  const imageUrl = `https://tieafcjteebgebgmknsi.supabase.co/storage/v1/object/public/${pathSplited[0]}//${pathSplited[1]}`;
   const slug = slugify(`${firstName}-${lastName}-${date}`, { lower: true });
 
-  const response = await axios.post("http://localhost:3000/api/payment", {
+  const response = await axios.post("https://luaeterna.com.br/api/payment", {
     firstName,
     lastName,
     email,
