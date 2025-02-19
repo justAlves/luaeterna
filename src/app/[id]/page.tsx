@@ -1,6 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { getPage } from "@/services/getPage";
-import { Download, Heart, Share2, Calendar } from "lucide-react";
+import { Heart, Calendar } from "lucide-react";
 import Image from "next/image";
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
@@ -63,18 +62,6 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
               <p className="text-gray-700 italic">
                 &quot;{page?.message}&quot;
               </p>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:opacity-90 transition-opacity">
-                <Share2 className="w-4 h-4 mr-2" />
-                Compartilhar
-              </Button>
-              <Button className="flex-1 bg-white hover:bg-gray-50 text-gray-900 border border-purple-200">
-                <Download className="w-4 h-4 mr-2" />
-                Download
-              </Button>
             </div>
           </div>
         </div>
