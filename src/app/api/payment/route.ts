@@ -16,29 +16,15 @@ export async function POST(req: Request){
   } = await req.json();
 
   const paymentData = {
-    frequency: "ONE_TIME",
-    methods: [
-      "PIX"
-    ],
-    products: [
-      {
-        externalId: "luaeterna-page",
-        name: "Página de Casal - LuaEterna",
-        description: "Página de Casal criada com o Lua Eterna",
-        quantity: 1,
-        price: 3500
-      }
-    ],
-    returnUrl: "https://www.luaeterna.com.br/criar",
-    completionUrl: `https://www.luaeterna.com.br/success/${slug}`,
-    customer: {
-      name: firstName,
-      email,
-      cellphone: phone,
-      taxId: cpf
-    }
+    name: "Página LuaEterna",
+    description: "Página LuaEterna",
+    value: 35.00,
+    billingType: "PIX",
+    chargeType: "DETACHED",
+    dueDateLimitDays: 1,
+    callback: {successUrl: 'https://luaeterna.com.br/success/' + slug}
   }
-  const payment = await abacatePay.post("/billing/create", paymentData);
+  const payment = await abacatePay.post("/", paymentData);
 
   
   await redis.set(slug, JSON.stringify({
@@ -50,9 +36,8 @@ export async function POST(req: Request){
     date,
     moonPhase,
     phone,
-    cpf,
-    paymentId: payment.data.data.id
+    cpf
   }), {ex: 1800});
 
-  return NextResponse.json({url: payment.data.data.url}, {status: 200})
+  return NextResponse.json({url: payment.data.url}, {status: 200})
 }

@@ -9,7 +9,7 @@ export default async function SuccessPage({ params }: { params: Promise<{ slug: 
     const paymentData = await redis.get(`${(await params).slug}`);
 
     if (!paymentData) {
-      redirect('/404');
+      redirect('/error');
     }
     
     const response = await axios.post(`https://www.luaeterna.com.br/api/create`, {...paymentData, slug: (await params).slug});

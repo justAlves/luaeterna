@@ -56,24 +56,7 @@ export async function POST(req: Request){
     date,
     moonPhase,
     slug,
-    paymentId,
   } = await req.json();
-
-  const payments = await abacatePay.get("billing/list");
-
-  const payment = payments.data.data.find((payment: Bill) => payment.id === paymentId);
-
-  if (!payment) {
-    redis.del(slug);
-
-    return NextResponse.json("Pagamento não encontrado", {status: 404});
-  }
-
-  if(payment.status !== "PAID"){
-    redis.del(slug);
-
-    return NextResponse.json("Pagamento não foi aprovado", {status: 400});
-  }
 
   const { error } = await supabase.from("Page").insert({
     firstName,
