@@ -15,7 +15,7 @@ export const redis = new Redis({
 const authstring = btoa(`${process.env.NEXT_PUBLIC_ASTRONOMY_CLIENT!}:${process.env.NEXT_PUBLIC_ASTRONOMY_SECRET!}`)
 
 export const abacatePay = axios.create({
-  baseURL: "https://api-sandbox.asaas.com/v3",
+  baseURL: "https://api.asaas.com/v3",
   headers: {
     access_token: process.env.ABACATE_PAY_SECRET
   }
