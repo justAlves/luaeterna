@@ -18,13 +18,13 @@ export async function POST(req: Request){
   const paymentData = {
     name: "Página LuaEterna",
     description: "Página LuaEterna",
-    value: 35.00,
+    value: 25.00,
     billingType: "PIX",
     chargeType: "DETACHED",
     dueDateLimitDays: 1,
     callback: {successUrl: 'https://luaeterna.com.br/success/' + slug}
   }
-  const payment = await abacatePay.post("/", paymentData);
+  const payment = await abacatePay.post("/paymentLinks", paymentData);
 
   
   await redis.set(slug, JSON.stringify({

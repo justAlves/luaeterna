@@ -157,7 +157,7 @@ export default function Page() {
               type="submit"
               className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-6 text-lg hover:opacity-90 transition-opacity"
             >
-              Criar Lua Eterna R$35,00
+              Criar Lua Eterna R$25,00
               <Heart className="ml-2 h-5 w-5" />
             </Button>
           </div>
