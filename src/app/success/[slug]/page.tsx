@@ -32,6 +32,7 @@ export default async function SuccessPage({ params }: { params: Promise<{ slug: 
           </p>
           <Button
             className="mt-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:opacity-90 transition-opacity"
+            asChild
           >
             <Link href={`${response.data.url}`}>
               Acessar a Página
