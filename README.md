@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <h1>🌙 LuaEterna</h1>
+  <p><em>Um presente eterno em forma de página interativa</em></p>
+</div>
 
-## Getting Started
+---
 
-First, run the development server:
+## ✨ O que é o LuaEterna?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+O **LuaEterna** é um SaaS que transforma memórias especiais em páginas interativas, pensadas para presentear alguém de forma única e emocional.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Cada página criada contem:
+- 💌 Uma mensagem personalizada
+- 🖼️ Imagens e lembranças importantes
+- 🌕 Uma foto da lua na data escolhida
+- 📱 Um QR Code para compartilhamento ou impressão
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎁 Para quem é?
 
-## Learn More
+- Pessoas que querem presentear de maneira criativa e inesquecível
+- Casais, amigos, familiares ou grupos de despedida
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 💡 Como funciona?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Você acessa o site e preenche um formulário com os detalhes do presente
+2. Após o pagamento (via Pix), a página é gerada automaticamente
+3. Você recebe por e-mail a URL da página e um QR Code exclusivo para compartilhar
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧪 Exemplo de página
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[🔗 Ver exemplo de uma LuaEterna gerada](https://luaeterna.com.br/guilherme-alves-aline-moura-2024-08-24)
+
+---
+
+## 📩 Contato
+
+Tem interesse em parcerias, ideias ou quer saber mais?
+
+Entre em contato:
+- 🌐 [Site Oficial](https://luaeterna.com.br)
+- ✉️ contato@luaeterna.com.br
+
+---
+
+## 🧙 Bastidores
+
+> Um projeto feito com amor por Guilherme Alves ❤️  
+> Tecnologias utilizadas: Next.js, Stripe, Supabase, Prisma, PostgreSQL e TailwindCSS.
+
+---
+
+<div align="center">
+  <sub>© LuaEterna - Todos os direitos reservados.</sub>
+</div>
